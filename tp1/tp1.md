@@ -21,9 +21,9 @@ ce cours</span>
 <ol>
 <li>Créer votre compte github avec vos adresse email de l'@isae.edu.lb et le nom d'utilisateur
 identifiant Cnam Liban [Voir la vidéo](https://youtu.be/UShoAaZihRU)</li>
-<li>Créer un fork du projet github https://github.com/ISSAE/NFP121</li>
+<li>Créer un fork du projet github https://github.com/ISSAE/nfp121.tp1/</li>
 <li>cloner en local votre projet issue du fork par exemple dans c:\sharing\mesgit\</li>
-<li>Lancer Bluej, puis ouvrir le projet qui se trouve c:\sharing\mesgit\NFP121\tp1</li>
+<li>Lancer Bluej, puis ouvrir le projet qui se trouve c:\sharing\mesgit\nfp121.tp1\tp1</li>
 </ol>
 <br />
 Vous obtenez :
@@ -36,9 +36,9 @@ Vous obtenez :
 Les 3 questions correspondent aux 3 paquetages
 <ul>
 <li>si vous avez cloner dans c:\sharing\mesgit\ Votre projet tp1 se trouve maintenant dans le
-répertoire : 'c:\sharing\mesgit\NFP121\tp1'</li>
+répertoire : 'c:\sharing\mesgit\nfp121.tp1\tp1'</li>
 <li>L'énoncé du TP/TD ('tp1') est dans ce répertoire en 'c:\sharing\mesgit\NFP121\tp1\tp1.html'. ou
-encore https://issae.github.io/NFP121/tp1/tp1.html</li>
+encore https://issae.github.io/nfp121.tp1/tp1/tp1</li>
 </ul>
 </div>
 
