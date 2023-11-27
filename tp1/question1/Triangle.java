@@ -171,4 +171,72 @@ public class Triangle {
             canvas.erase(this);
         }
     }
+    
+    /**
+     * Get the height of the triangle.
+     * 
+     * @return The height of the triangle.
+     */
+    public int getHeight() {
+        return height;
+    }
+
+    /**
+     * Get the width of the triangle.
+     * 
+     * @return The width of the triangle.
+     */
+    public int getWidth() {
+        return width;
+    }
+
+    /**
+     * Get the x-coordinate of the triangle's position.
+     * 
+     * @return The x-coordinate of the triangle's position.
+     */
+    public int getXPosition() {
+        return xPosition;
+    }
+
+    /**
+     * Get the y-coordinate of the triangle's position.
+     * 
+     * @return The y-coordinate of the triangle's position.
+     */
+    public int getYPosition() {
+        return yPosition;
+    }
+
+    /**
+     * Get the color of the triangle.
+     * 
+     * @return The color of the triangle.
+     */
+    public String getColor() {
+        return color;
+    }
+
+    /**
+     * Check if the triangle is visible.
+     * 
+     * @return True if the triangle is visible, otherwise false.
+     */
+    public boolean isVisible() {
+        return isVisible;
+    }
+    
+    /**
+     * Returns a string representation of the triangle.
+     * @return The triangle information as a formatted string.
+     */
+    @Override
+    public String toString() {
+        return "Triangle Info:\n" +
+                "Position X: " + getXPosition() + "\n" +
+                "Position Y: " + getYPosition() + "\n" +
+                "Couleur: " + getColor() + "\n" +
+                "Hauteur: " + getHeight() + "\n" +
+                "Largeur: " + getWidth();
+    }
 }

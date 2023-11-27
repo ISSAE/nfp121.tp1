@@ -166,4 +166,62 @@ public class Square {
             canvas.erase(this);
         }
     }
+    
+    /**
+     * Get the size of the square.
+     * 
+     * @return The size of the square.
+     */
+    public int getSize() {
+        return size;
+    }
+
+    /**
+     * Get the x-coordinate of the square's position.
+     * 
+     * @return The x-coordinate of the square's position.
+     */
+    public int getXPosition() {
+        return xPosition;
+    }
+
+    /**
+     * Get the y-coordinate of the square's position.
+     * 
+     * @return The y-coordinate of the square's position.
+     */
+    public int getYPosition() {
+        return yPosition;
+    }
+
+    /**
+     * Get the color of the square.
+     * 
+     * @return The color of the square.
+     */
+    public String getColor() {
+        return color;
+    }
+
+    /**
+     * Check if the square is visible.
+     * 
+     * @return True if the square is visible, otherwise false.
+     */
+    public boolean isVisible() {
+        return isVisible;
+    }
+    
+    /**
+     * Returns a string representation of the square.
+     * @return The square information as a formatted string.
+     */
+    @Override
+    public String toString() {
+        return "Square Info:\n" +
+                "Position X: " + getXPosition() + "\n" +
+                "Position Y: " + getYPosition() + "\n" +
+                "Couleur: " + getColor() + "\n" +
+                "Taille: " + getSize();
+    }
 }

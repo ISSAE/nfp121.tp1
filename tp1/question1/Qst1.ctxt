@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=Qst1
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Qst1\ here.\r\n\r\n\ @author\ Ali\ Zaarour\r\n\ @version\ 26/11/2023\r\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment2.params=canvas
+comment2.target=void\ addCircle(Canvas)
+comment3.params=canvas
+comment3.target=void\ addTriangle(Canvas)
+comment4.params=canvas
+comment4.target=void\ addSquare(Canvas)
+numComments=5

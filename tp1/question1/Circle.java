@@ -167,4 +167,63 @@ public class Circle {
             canvas.erase(this);
         }
     }
-}
+    
+    /**
+     * Get the diameter of the circle.
+     * 
+     * @return The diameter of the circle.
+     */
+    public int getDiameter() {
+        return diameter;
+    }
+
+    /**
+     * Get the x-coordinate of the circle's position.
+     * 
+     * @return The x-coordinate of the circle's position.
+     */
+    public int getXPosition() {
+        return xPosition;
+    }
+
+    /**
+     * Get the y-coordinate of the circle's position.
+     * 
+     * @return The y-coordinate of the circle's position.
+     */
+    public int getYPosition() {
+        return yPosition;
+    }
+
+    /**
+     * Get the color of the circle.
+     * 
+     * @return The color of the circle.
+     */
+    public String getColor() {
+        return color;
+    }
+
+    /**
+     * Check if the circle is visible.
+     * 
+     * @return True if the circle is visible, otherwise false.
+     */
+    public boolean isVisible() {
+        return isVisible;
+    }
+    
+    /**
+     * Returns a string representation of the circle.
+     * @return The circle information as a formatted string.
+     */
+    @Override
+    public String toString() {
+        return "Circle Info:\n" +
+                "Position X: " + getXPosition() + "\n" +
+                "Position Y: " + getYPosition() + "\n" +
+                "Couleur: " + getColor() + "\n" +
+                "Diamètre: " + getDiameter();
+    }
+}   
+
