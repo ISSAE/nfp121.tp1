@@ -44,9 +44,18 @@ public class AuditeurCNAM {
      * @return le login du Cnam simplifié, sans les adaptations dues aux
      *         homonymes...
      */
-    public String login() {
-        return "";// à compléter
-    }
+ public String login() {
+    // Convertit le nom en minuscules, puis extrait les premières 6 lettres ou moins
+    // Remplace les caractères spéciaux du nom par des '_' en utilisant une expression régulière
+    String nomSimplifier = nom.toLowerCase().substring(0, Math.min(6, nom.length())).replaceAll("[^a-zA-Z0-9]", "_");
+
+    // Prend la première lettre du prénom et la transforme en minuscules
+    // Remplace les caractères spéciaux de la première lettre du prénom par des '_'
+    String premiereLettrePrenom = prenom.toLowerCase().substring(0, 1).replaceAll("[^a-zA-Z0-9]", "_");
+    
+    // Combine les parties du login pour former le login final
+    return nomSimplifier + "_" + premiereLettrePrenom;
+}
 
     /**
      * Lecture du nom de l'auditeur.
@@ -54,7 +63,7 @@ public class AuditeurCNAM {
      * @return son nom
      */
     public String nom() {
-        return null;// à compléter
+        return nom;
     }
 
     /**
@@ -63,7 +72,7 @@ public class AuditeurCNAM {
      * @return son prénom
      */
     public String prenom() {
-        return null;// à compléter
+        return prenom;
     }
 
     /**
@@ -72,7 +81,7 @@ public class AuditeurCNAM {
      * @return son matricule
      */
     public String matricule() {
-        return null;// à compléter
+        return matricule;
     }
 
     /**

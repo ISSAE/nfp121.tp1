@@ -120,6 +120,38 @@ public class AuditeurCNAMTest extends junit.framework.TestCase {
         assertEquals("Mme Chloé chloé ", "Chloé", auditeur1.nom());
         assertEquals("Mme Chloé chloé ", "chloé", auditeur1.prenom());
         assertEquals(" nom avec accent (é devient e) ? ", "chloe_c",
-            auditeur1.login());
+            auditeur1.login()); //renvoi faux pour tester le cas de defis
     }
+    
+    /**
+     * Teste le comportement lorsque le nom est une chaîne vide.
+     */
+    public void test_nom_vide() {
+        AuditeurCNAM auditeur = new AuditeurCNAM("", "John", "12345");
+        assertEquals("", auditeur.nom());
+        assertEquals("John", auditeur.prenom());
+        assertEquals("_j", auditeur.login());
+    }
+    
+    /**
+     * Teste le comportement lorsque le nom est très long.
+     * Vérifie si la classe gère correctement un nom dépassant une certaine longueur.
+     */
+    public void test_nom_tres_long() {
+        String nomTresLong = "NomTresLongQuiDepasseLaLongueurMaximaleAutorisee";
+        AuditeurCNAM auditeur = new AuditeurCNAM(nomTresLong, "Alice", "12345");
+        assertEquals("nomtre_a", auditeur.login());
+    }
+    
+        /**
+     * Teste le comportement avec un nom composé et une separation par vide.
+     * Vérifie si la classe gère correctement les noms composés avec separation par vide.
+     */
+    public void test_nom_compose_avec_separation_vide() {
+        AuditeurCNAM auditeur = new AuditeurCNAM("de la Roche", "Jean", "12345");
+        assertEquals("de la Roche", auditeur.nom());
+        assertEquals("Jean", auditeur.prenom());
+        assertEquals("de_la__j", auditeur.login());
+    }
+
 }
