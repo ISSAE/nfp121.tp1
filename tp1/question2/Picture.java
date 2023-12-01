@@ -20,6 +20,8 @@ public class Picture {
     private Square window;
     private Triangle roof;
     private Circle sun;
+    private Circle soleilJaune;
+    private Boolean terreIsFixe;
 
     /**
      * Constructor for objects of class Picture
@@ -32,6 +34,8 @@ public class Picture {
      * Draw this picture.
      */
     public void draw() {
+        this.terreIsFixe = false;
+        
         wall = new Square();
         wall.moveVertical(80);
         wall.changeSize(100);
@@ -55,6 +59,14 @@ public class Picture {
         sun.moveVertical(-10);
         sun.changeSize(60);
         sun.makeVisible();
+        
+        soleilJaune = new Circle();
+        soleilJaune.changeColor("yellow");
+        soleilJaune.moveHorizontal(180);
+        soleilJaune.moveVertical(-20);
+        soleilJaune.changeSize(60);
+        soleilJaune.makeVisible();
+        
     }
 
     /**
@@ -81,6 +93,96 @@ public class Picture {
             roof.changeColor("green");
             sun.changeColor("yellow");
         }
+    }
+    
+    /**
+     * Anime le déplacement vertical du soleil pour simuler le coucher, si les conditions sont remplies.
+     *
+     * @param distance La distance pour déplacer le soleil.
+     */
+    public void coucher(int distance) {
+        if (sun != null && sun.getColor().equalsIgnoreCase("blue") && terreIsFixe) {
+    
+            Thread animationThread = new Thread(() -> {
+                int steps = distance / 10;//nb d'iteration par deplacement
+    
+                for (int i = 0; i < steps; i++) {
+                    sun.slowMoveVertical(10);
+    
+                    try {
+                        Thread.sleep(100); 
+                    } catch (InterruptedException e) {
+                        // Gérer l'exception d'interruption si nécessaire
+                        e.printStackTrace();
+                    }
+                }
+            });
+    
+            animationThread.start();
+        }
+    }
+    
+    /**
+     * Get the wall square instance.
+     * 
+     * @return The Square representing the wall.
+     */
+    public Square getWall() {
+        return wall;
+    }
+
+    /**
+     * Get the window square instance.
+     * 
+     * @return The Square representing the window.
+     */
+    public Square getWindow() {
+        return window;
+    }
+
+    /**
+     * Get the roof triangle instance.
+     * 
+     * @return The Triangle representing the roof.
+     */
+    public Triangle getRoof() {
+        return roof;
+    }
+
+    /**
+     * Get the sun circle instance.
+     * 
+     * @return The Circle representing the sun.
+     */
+    public Circle getSun() {
+        return sun;
+    }
+    
+        /**
+     * Get the soleilJaune circle instance.
+     * 
+     * @return The Circle representing the sun.
+     */
+    public Circle getSoleilJaune() {
+        return soleilJaune;
+    }
+    
+        /**
+     * Get the status of the "terre".
+     * 
+     * @return The status of the "terre".
+     */
+    public Boolean isTerreIsFixe() {
+        return terreIsFixe;
+    }
+
+    /**
+     * Set the status of the "terre".
+     * 
+     * @param terreIsFixe The status of the "terre" to be set.
+     */
+    public void setTerreIsFixe(Boolean terreIsFixe) {
+        this.terreIsFixe = terreIsFixe;
     }
 
 }
